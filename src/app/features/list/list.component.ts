@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common'; // Import necessário para diretivas como *ngFor
+import { ProductsService } from '../../shared/service/products.service';
 
 @Component({
   selector: 'app-list',
@@ -12,10 +13,10 @@ import { CommonModule } from '@angular/common'; // Import necessário para diret
 export class ListComponent {
   products: any[] = [];
 
-  httpClient = inject(HttpClient);
+  productsService = inject(ProductsService);
 
   ngOnInit() {
-    this.httpClient.get<any>('/api/products').subscribe((products) => {
+    this.productsService.getAll().subscribe((products) => {
       this.products = products;
     });
   }
