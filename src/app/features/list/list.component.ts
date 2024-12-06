@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common'; // Import necessário para diret
 import { ProductsService } from '../../shared/service/products.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { CardComponent } from './components/card/card.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule], // Inclua o CommonModule aqui
+  imports: [CommonModule, CardComponent], // Inclua o CommonModule aqui
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'] // Corrigido o nome da propriedade (styleUrls)
 })
